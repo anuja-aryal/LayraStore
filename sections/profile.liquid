@@ -1,0 +1,41 @@
+<div>
+    <h3>
+        {{section.settings.user_name}}  <br>
+        <img src="{{section.settings.user_img | img_url: '300*300'}}" alt="">     
+    </h3>
+    <p>
+        {{section.settings.user_bio}}
+    </p>
+</div>
+{% schema %}
+{
+    "name" : "Profile",
+     "limit" : 2,
+
+    "settings": [
+ 
+    {
+        "type": "image_picker",
+        "id" : "user_img",
+        "label": "User Photo"
+    },
+    {
+        "type": "text",
+        "id" : "user_name",
+        "label": "User name"
+    },
+    {
+        "type": "richtext",
+        "id" : "user_bio",
+        "label": "User Bio"
+    }
+  ],
+    "presets": [
+    {
+        "name": "User Profile",
+        "category": "Profile"
+        }
+  ]
+}
+{% endschema %}
+
